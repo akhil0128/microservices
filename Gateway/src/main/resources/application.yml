@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: UserAPI-service
+        uri: lb://UserAPI-service
+        predicates:
+        - Path=/user/**
+      - id: ContactAPI-service
+        uri: lb://ContactAPI-service
+        predicates:
+        - Path=/contact/**
+  application:
+    name: Gateway

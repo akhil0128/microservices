@@ -1,0 +1,14 @@
+server:
+  port: 9991
+  
+spring:
+  application:
+    name: UserAPI-service
+  cloud:
+    consul:
+        config:
+         enabled: true
+         default-context: application
+         prefixes: config
+         profile-separator: '::'
+         format: YAML

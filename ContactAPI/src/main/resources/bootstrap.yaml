@@ -1,0 +1,14 @@
+server:
+  port: 9999
+  
+spring:
+  application:
+    name: ContactAPI-service
+  cloud:
+    consul:
+        config:
+         enabled: true
+         default-context: application
+         prefixes: config
+         profile-separator: '::'
+         format: YAML
